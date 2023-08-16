@@ -39,9 +39,8 @@ export const Product: FC = () => {
           deleteDoc(doc(productCollection, `${item.id}`));
         },
         onCancel() {
-          // chưa xét lại được uncheck của checkbox
-          setSeleDel([]);
-          // console.log("cancel", SeleDel);
+          //  xét lại được uncheck của checkbox
+          // window.location.reload();
         },
       });
     });
@@ -74,9 +73,6 @@ export const Product: FC = () => {
     onChange: (selectedRowKeys: React.Key[], selectedRows: productType[]) => {
       showConfirm(selectedRows);
       setSelectedRowAll(selectedRows);
-      setSeleDel(selectedRowKeys as any);
-      // console.log("change", SeleDel);
-      // console.log("selectedRowKeys", selectedRowKeys);
     },
   };
 
